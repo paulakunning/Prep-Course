@@ -10,7 +10,15 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
-}
+  // UNA FORMA ---> return Object.entries(objeto);
+//OTRA FORMA:
+  var array = [];
+  for (const props in objeto) {
+    array.push([props, objeto[props]])
+     }
+     return array;
+  }
+
 
 
 function numberOfCharacters(string) {
@@ -18,6 +26,18 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  let response = {}
+  let transform = string.split('').sort();
+  for (let i = 0; i < transform.length; i++) {
+    if (!response.transform[i]){
+      response[transform[i]] = 1
+    } else {
+      response[transform[i]] ++
+    }
+  }
+
+  return response;
+
 }
 
 
